@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+
+:root {
+    /* colors */
+    --clr-primary-purple: hsl(300, 43%, 22%);
+    --clr-primary-pink: hsl(333, 80%, 67%);
+
+    --clr-neutral-purple: hsl(303, 10%, 53%);
+    --clr-neutral-grey:hsl(300, 24%, 96%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+    /* font */
+    --ff-regular: 'League Spartan', sans-serif;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image:  url(/images/bg-pattern-top-mobile.svg), url(/images/bg-pattern-bottom-mobile.svg);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: var(--ff-regular);
+    font-weight: var(--fw-regular);
+}
+
+.main {
+    margin: 6.5rem 2.7rem 10rem 2.7rem;
+    max-width: 1100px;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Company Appriasal */
+.appraisal {
+    margin-bottom: 4rem;
+}
+
+.appraisal__title {
+    color: var(--clr-primary-purple);
+    font-size: 4rem;
+    font-weight: var(--fw-bold);
+    line-height: 0.8;
+    padding: 2rem 0 2.2rem 0;
+    text-align: center;
+    word-spacing: -0.1ch;
+}
+
+.appraisal__statement {
+    color: var(--clr-neutral-purple);
+    font-size: 1.7rem;
+    font-weight: var(--fw-medium);
+    line-height: 1.4;
+    text-align: center;
+}
+
+
+/* Reviews and star rating */
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 5.1rem;
+}
+
+.review__item {
+    align-items: center;
+    background-color: var(--clr-neutral-grey);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+.review__rating {
+    align-items: center;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    width: 100%;
+}
+.review__statement {
+    color: var(--clr-primary-purple);
+    font-size: 1.7rem;
+}
+
+
+/* Customer Testimonials */
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.testimonial__item {
+    background-color: var(--clr-primary-purple);
+    border-radius: 0.8rem;
+    color: var(--clr-neutral-white);
+    padding: 3rem 2.5rem;
+}
+
+.testimonial__image {
+    border-radius: 50%;
+    float: left;
+    margin-right: 2rem;
+    width: 40px;
+}
+
+.testimonial__name {
+    font-size: 1.6rem;
+    font-weight: var(--fw-medium);
+    margin: 0.5rem 0;
+}
+
+.testimonial__status {
+    color: var(--clr-primary-pink);
+}
+
+.testimonial__quote {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    margin-top: 3rem;
+}
+
+
+
+
+/* BREAKPOINT - SML */
+@media screen and (min-width: 576px) {
+
+    .appraisal__title {
+        font-size: 5rem;
+    }
+
+    .appraisal__statement {
+        font-size: 1.8rem;
+    }
+
+    .testimonial__quote {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* BREAKPOINT - MED */
+@media screen and (min-width: 768px) {
+
+    body {
+        background-image: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom;
+        background-repeat: no-repeat;
+        background-size: 43%, 55%;
+    }
+
+    .main {
+        margin: 9.5rem 2.7rem;
+    }
+
+    .main__container {
+        flex-direction: row;
+        gap: 8rem;
+        margin-bottom: 3rem;
+    }
+
+    .appraisal {
+        width: 50%;
+    }
+
+    .appraisal__title {
+        text-align: left;
+        padding: 2.2rem 0 2.5rem 0;
+    }
+
+    .appraisal__statement {
+        text-align: left;
+    }
+
+    .review {
+        padding-top: 3rem;
+        width: 50%;
+        align-items: flex-end;
+    }
+
+    .review__item {
+        width: 82%;
+        padding: 1.5rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .testimonial__item {
+        padding: 3.5rem 3.5rem;
+    }
+}
+
+
+/* BREAKPOINT - LRG */
+@media screen and (min-width: 992px) {
+
+    .appraisal__title {
+        font-size: 6rem;
+        padding-right: 5rem;
+    }
+
+    .appraisal__statement {
+        padding-right: 6rem;
+    }
+
+    .review {
+        align-items: normal;
+    }
+
+    /* Review Modifier Class */
+    .review__item--align-center {
+        align-self: center;
+    }
+
+    /* Review Modifier Class */
+    .review__item--align-end {
+        align-self: flex-end;
+    }
+
+    .testimonial {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .testimonial__item {
+        max-width: 350px;
+    }
+}
+
+
+/* BREAKPOINT - EXTRA LRG */
+@media screen and (min-width: 1200px) {
+
+    .review {
+        padding-top: 5rem;
+    }
+
+    .review__item {
+        flex-direction: row;
+        padding: 2rem 3rem;
+        gap: 2rem;
+    }
+
+    .review__rating {
+        justify-content: start;
+        width: 35%;
+    }
+
+    .review__statement {
+        width: 65%;
+    }
+
+    .testimonial__item {
+        height: 230px;
+    }
+
+    /* Testimonial Modifier Class */
+    .testimonial__item--margin-sml {
+        margin-top: 2rem;
+    }
+
+    /* Testimonial Modifier Class */
+    .testimonial__item--margin-lrg {
+        margin-top: 4rem;
+    }
+}
